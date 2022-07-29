@@ -14,7 +14,7 @@ export const movieType = {
 export const tvType = {
     upcoming: "upcoming",
     top_rated: "top_rated",
-    on_the_air: "on_the_air",
+    popular: "popular",
 };
 
 const tmdbApi = {
