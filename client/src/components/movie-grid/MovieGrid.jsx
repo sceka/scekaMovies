@@ -1,25 +1,27 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { useHistory, useParams } from "react-router";
+
 import "./movie-grid.scss";
 
 import MovieCard from "../movie-card/MovieCard";
-import { useHistory, useParams } from "react-router-dom";
-import tmdbApi, { category, movieType, tvType } from "../../api/tmdbApi";
-import { OutlineButton } from "../button/Button";
+import Button, { OutlineButton } from "../button/Button";
 import Input from "../input/input";
-import Button from "../button/Button";
+
+import tmdbApi, { category, movieType, tvType } from "../../api/tmdbApi";
 
 const MovieGrid = (props) => {
     const [items, setItems] = useState([]);
 
     const [page, setPage] = useState(1);
-
     const [totalPage, setTotalPage] = useState(0);
+
     const { keyword } = useParams();
+
     useEffect(() => {
         const getList = async () => {
             let response = null;
-            const params = {};
             if (keyword === undefined) {
+                const params = {};
                 switch (props.category) {
                     case category.movie:
                         response = await tmdbApi.getMoviesList(
@@ -46,8 +48,10 @@ const MovieGrid = (props) => {
 
     const loadMore = async () => {
         let response = null;
-        const params = { page: page + 1 };
         if (keyword === undefined) {
+            const params = {
+                page: page + 1,
+            };
             switch (props.category) {
                 case category.movie:
                     response = await tmdbApi.getMoviesList(movieType.upcoming, {
@@ -61,8 +65,8 @@ const MovieGrid = (props) => {
             }
         } else {
             const params = {
-                query: keyword,
                 page: page + 1,
+                query: keyword,
             };
             response = await tmdbApi.search(props.category, { params });
         }
@@ -83,7 +87,7 @@ const MovieGrid = (props) => {
             {page < totalPage ? (
                 <div className="movie-grid__loadmore">
                     <OutlineButton className="small" onClick={loadMore}>
-                        Load More
+                        Load more
                     </OutlineButton>
                 </div>
             ) : null}
@@ -93,10 +97,12 @@ const MovieGrid = (props) => {
 
 const MovieSearch = (props) => {
     const history = useHistory();
+
     const [keyword, setKeyword] = useState(props.keyword ? props.keyword : "");
+
     const goToSearch = useCallback(() => {
         if (keyword.trim().length > 0) {
-            history.push(`${category[props.category]}/search/${keyword}`);
+            history.push(`/${category[props.category]}/search/${keyword}`);
         }
     }, [keyword, props.category, history]);
 
