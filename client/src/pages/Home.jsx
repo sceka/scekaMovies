@@ -13,7 +13,14 @@ const Home = () => {
             <HeroSlide />
             <div className="container">
                 <div className="section mb-3">
-                    <div className="section__header mb-2">
+                    <div
+                        className="section__header mb-2"
+                        style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                        }}
+                    >
                         <h2>Trending Movies</h2>
                         <Link to="/movie">
                             <OutlineButton className="small">
@@ -28,7 +35,14 @@ const Home = () => {
                 </div>
 
                 <div className="section mb-3">
-                    <div className="section__header mb-2">
+                    <div
+                        className="section__header mb-2"
+                        style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                        }}
+                    >
                         <h2>Top Rated Movies</h2>
                         <Link to="/movie">
                             <OutlineButton className="small">
@@ -43,7 +57,14 @@ const Home = () => {
                 </div>
 
                 <div className="section mb-3">
-                    <div className="section__header mb-2">
+                    <div
+                        className="section__header mb-2"
+                        style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                        }}
+                    >
                         <h2>Trending TV</h2>
                         <Link to="/tv">
                             <OutlineButton className="small">
@@ -55,7 +76,14 @@ const Home = () => {
                 </div>
 
                 <div className="section mb-3">
-                    <div className="section__header mb-2">
+                    <div
+                        className="section__header mb-2"
+                        style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                        }}
+                    >
                         <h2>Top Rated TV</h2>
                         <Link to="/tv">
                             <OutlineButton className="small">

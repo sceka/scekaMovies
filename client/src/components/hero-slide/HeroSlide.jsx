@@ -25,7 +25,8 @@ const HeroSlide = () => {
                     movieType.popular,
                     { params }
                 );
-                setMovieItems(response.results.slice(0, 4));
+                setMovieItems(response.results.slice(1, 4));
+                console.log(response);
             } catch {
                 console.log("error");
             }
@@ -40,7 +41,7 @@ const HeroSlide = () => {
                 grabCursor={true}
                 spaceBetween={0}
                 slidesPerView={1}
-                autoplay={{ delay: 3000 }}
+                // autoplay={{delay: 3000}}
             >
                 {movieItems.map((item, i) => (
                     <SwiperSlide key={i}>
@@ -61,7 +62,7 @@ const HeroSlide = () => {
 };
 
 const HeroSlideItem = (props) => {
-    let history = useHistory();
+    let hisrory = useHistory();
 
     const item = props.item;
 
@@ -75,11 +76,11 @@ const HeroSlideItem = (props) => {
         const videos = await tmdbApi.getVideos(category.movie, item.id);
 
         if (videos.results.length > 0) {
-            const videoSrc =
+            const videSrc =
                 "https://www.youtube.com/embed/" + videos.results[0].key;
             modal
                 .querySelector(".modal__content > iframe")
-                .setAttribute("src", videoSrc);
+                .setAttribute("src", videSrc);
         } else {
             modal.querySelector(".modal__content").innerHTML = "No trailer";
         }
@@ -98,7 +99,7 @@ const HeroSlideItem = (props) => {
                     <div className="overview">{item.overview}</div>
                     <div className="btns">
                         <Button
-                            onClick={() => history.push("/movie/" + item.id)}
+                            onClick={() => hisrory.push("/movie/" + item.id)}
                         >
                             Watch now
                         </Button>
