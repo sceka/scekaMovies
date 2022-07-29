@@ -43,7 +43,7 @@ const Header = () => {
             <div className="header__wrap container">
                 <div className="logo">
                     <img src="" alt="" />
-                    <Link to="/">scekaMovies</Link>
+                    <a href="/">scekaMovies</a>
                 </div>
                 <ul className="header__nav">
                     {headerNav.map((e, i) => (
@@ -51,7 +51,7 @@ const Header = () => {
                             key={i}
                             className={`${i === active ? "active" : ""}`}
                         >
-                            <Link to={e.path}>{e.display}</Link>
+                            <a href={e.path}>{e.display}</a>
                         </li>
                     ))}
                 </ul>

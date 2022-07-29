@@ -97,15 +97,15 @@ const HeroSlideItem = (props) => {
                 <div className="hero-slide__item__content__info">
                     <h2 className="title">{item.title}</h2>
                     <div className="overview">{item.overview}</div>
-                    <div className="btns">
+                    <div className="btns" style={{ display: "flex" }}>
                         <Button
                             onClick={() => hisrory.push("/movie/" + item.id)}
                         >
                             Watch now
                         </Button>
-                        <OutlineButton onClick={setModalActive}>
-                            Watch trailer
-                        </OutlineButton>
+                        <div onClick={setModalActive}>
+                            <OutlineButton>Watch trailer</OutlineButton>
+                        </div>
                     </div>
                 </div>
                 <div className="hero-slide__item__content__poster">

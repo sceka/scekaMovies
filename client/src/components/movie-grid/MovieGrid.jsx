@@ -85,10 +85,8 @@ const MovieGrid = (props) => {
                 ))}
             </div>
             {page < totalPage ? (
-                <div className="movie-grid__loadmore">
-                    <OutlineButton className="small" onClick={loadMore}>
-                        Load more
-                    </OutlineButton>
+                <div className="movie-grid__loadmore" onClick={loadMore}>
+                    <OutlineButton className="small">Load more</OutlineButton>
                 </div>
             ) : null}
         </>
