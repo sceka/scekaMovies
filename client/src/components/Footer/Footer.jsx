@@ -11,26 +11,26 @@ const Footer = () => {
                 <div className="footer__content__logo">
                     <div className="logo">
                         <img />
-                        <Link to="/">scekaMovies</Link>
+                        <a href="/">scekaMovies</a>
                     </div>
                 </div>
                 <div className="footer__content__menus">
                     <div className="footer__content__menu">
-                        <Link to="/">Home</Link>
-                        <Link to="/">Contact us</Link>
-                        <Link to="/">Terms of use</Link>
-                        <Link to="/">About us</Link>
+                        <a href="/">Home</a>
+                        <a href="/">Contact us</a>
+                        <a href="/">Terms of use</a>
+                        <a href="/">About us</a>
                     </div>
                     <div className="footer__content__menu">
-                        <Link to="/">Live</Link>
-                        <Link to="/">FAQ</Link>
-                        <Link to="/">Premium</Link>
-                        <Link to="/">Privacy Policy</Link>
+                        <a href="/">Live</a>
+                        <a href="/">FAQ</a>
+                        <a href="/">Premium</a>
+                        <a href="/">Privacy Policy</a>
                     </div>
                     <div className="footer__content__menu">
-                        <Link to="/">You must watch</Link>
-                        <Link to="/">Recent release</Link>
-                        <Link to="/">Top IMDB</Link>
+                        <a href="/">You must watch</a>
+                        <a href="/">Recent release</a>
+                        <a href="/">Top IMDB</a>
                     </div>
                 </div>
             </div>
